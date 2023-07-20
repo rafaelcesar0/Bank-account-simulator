@@ -90,8 +90,10 @@ def menu2()->None:
     global count_withdrawals
             
     menu = f"""
-Username: {online_user.name}          CPF: {online_user.cpf[:5]}...
-Agency: {online_user.agency}          Account: {online_user.connected_account}
+
+     
+  Agency: {online_user.agency}\tUsername: {online_user.name}
+ Account: {online_user.connected_account}\tCPF: {online_user.cpf[:5]}...
 
 =============== MENU ===============
 [1]\tDeposit
@@ -115,6 +117,7 @@ Agency: {online_user.agency}          Account: {online_user.connected_account}
                 print("\033[33m"+f"⚠️  You cannot withdraw more than {WITHDRAWAL_VALUE_LIMIT} dollars  ⚠️"+"\033[0m")
                 sleep(2)
         case "3":
+            system('cls' if name == 'nt' else 'clear')
             print(online_user.extract())
             system('pause' if name == 'nt' else 'read')
         case "4":

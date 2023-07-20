@@ -59,6 +59,7 @@ class User:
         withdrawal_value = abs(round(withdrawal_value,2))
         if withdrawal_value == 0:
             print("\033[33m"+"⚠️  You cannot withdraw 0 dollars  ⚠️"+"\033[0m")
+            sleep(1.5)
             return None
         if withdrawal_value <= self.account[self.connected_account]['balance'][-1]['value']:
             self.account[self.connected_account]['extract'].append({'value':-withdrawal_value, 'date': datetime.now().strftime("%d/%m/%Y")})
@@ -67,10 +68,12 @@ class User:
             
             return self.account[self.connected_account]['balance'][-1]
         print("\033[33m"+"⚠️  Insufficient balance  ⚠️"+"\033[0m")
+        sleep(1.5)
                                            
     def deposit(self, deposit_value:float)->None:
         if deposit_value == 0:
             print("\033[33m"+"⚠️  you cannot deposit zero dollars  ⚠️"+"\033[0m")
+            sleep(1.5)
             return None
         deposit_value = abs(round(deposit_value,2))
         
@@ -92,7 +95,8 @@ class User:
             reset = "\033[0m"
             return f"{colors[color]}{text}{reset}"
         
-        extract_str = "=============== EXTRATO ===============\n"
+        extract_str = f" Agency: {self.agency}\tUsername: {self.name}\nAccount: {self.connected_account}\tCPF: {self.cpf[:5]}...\n=============== EXTRATO ===============\n"
+
         for entry in self.account[self.connected_account]['extract']:
             value = entry['value']
             date = entry['date']
@@ -105,4 +109,3 @@ class User:
         extract_str += 39*'_'+f"\nSALDO R$: {self.account[self.connected_account]['balance'][-1]['value']:.2f}".ljust(30, '_')+self.account[self.connected_account]['balance'][-1]['date']
         
         return extract_str
-
