@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Rafa",
+        "cpf": "11122233344",
+        "date_birth": "28/01/2002",
+        "road": "Rua Dos Bobos",
+        "num_house": "123",
+        "neighborhood": "Bairro Dos Bobos",
+        "city": "Cidade Dos Bobos",
+        "state": "CE",
+        "agency": "0001",
+        "account": {
+            "1": {
+                "extract": [
+                    {
+                        "value": 400.0,
+                        "date": "20/07/2023"
+                    },
+                    {
+                        "value": -200.0,
+                        "date": "20/07/2023"
+                    }
+                ],
+                "balance": [
+                    {
+                        "value": 0,
+                        "date": "19/07/2023"
+                    },
+                    {
+                        "value": 400.0,
+                        "date": "20/07/2023"
+                    },
+                    {
+                        "value": 200.0,
+                        "date": "20/07/2023"
+                    }
+                ]
+            }
+        },
+        "connected_account": "1"
+    },
+    {
+        "name": "Caio",
+        "cpf": "00011122233",
+        "date_birth": "19/07/2006",
+        "road": "Rua Dos Trouxas",
+        "num_house": "321",
+        "neighborhood": "Bairro Dos Trouxas",
+        "city": "Cidade Dos Trouxas",
+        "state": "RJ",
+        "agency": "0001",
+        "account": {
+            "1": {
+                "extract": [],
+                "balance": [
+                    {
+                        "value": 0,
+                        "date": "10/02/2020"
+                    }
+                ]
+            }
+        },
+        "connected_account": "1"
+    }
+]
