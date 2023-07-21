@@ -72,7 +72,7 @@ class User:
                                            
     def deposit(self, deposit_value:float)->None:
         if deposit_value == 0:
-            print("\033[33m"+"⚠️  you cannot deposit zero dollars  ⚠️"+"\033[0m")
+            print("\033[33m"+"⚠️  You cannot deposit 0 dollars  ⚠️"+"\033[0m")
             sleep(1.5)
             return None
         deposit_value = abs(round(deposit_value,2))
