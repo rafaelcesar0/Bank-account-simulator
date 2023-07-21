@@ -95,7 +95,7 @@ class User:
             reset = "\033[0m"
             return f"{colors[color]}{text}{reset}"
         
-        extract_str = f" Agency: {self.agency}\tUsername: {self.name}\nAccount: {self.connected_account}\tCPF: {self.cpf[:5]}...\n=============== EXTRATO ===============\n"
+        extract_str = "=============== EXTRATO ===============\n"
 
         for entry in self.account[self.connected_account]['extract']:
             value = entry['value']
@@ -109,3 +109,8 @@ class User:
         extract_str += 39*'_'+f"\nSALDO R$: {self.account[self.connected_account]['balance'][-1]['value']:.2f}".ljust(30, '_')+self.account[self.connected_account]['balance'][-1]['date']
         
         return extract_str
+
+if __name__ == "__main__":
+    p = User("Rafa", "12345678910", "01/01/2000", "Rua teste", 123, "Centro", "São Paulo", "SP")
+    
+    print(p.extract())
